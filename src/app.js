@@ -4,10 +4,30 @@
 
 
     document.getElementById('add').addEventListener('click', function() {
-        let value = document.getElementById('item').value;
-        if (value) addItemToDo(value);
-
+        let input = document.getElementById('item');
+        if (input.value) addItemToDo(input.value);
+        input.value = '';
     } );
+
+    let removeItem = function () {
+        let item = this.parentNode.parentNode;
+        item.remove();
+    };
+
+    let completeItem = function () {
+        let item = this.parentNode.parentNode;
+
+
+        let id = item.parentNode.id;
+
+        let target = (id === 'todo') ? document.getElementById('completed'): document.getElementById('todo');
+
+        item.remove();
+        target.appendChild(item);
+
+
+
+    };
 
     let addItemToDo = (text) => {
 
@@ -23,17 +43,21 @@
         remove.innerText = 'remove';
         buttons.appendChild(remove);
 
+        remove.addEventListener('click', removeItem);
+
+
         let complete = document.createElement('button');
         complete.innerText = 'complete';
         buttons.appendChild(complete);
 
-        list.appendChild(buttons);
+        complete.addEventListener('click', completeItem);
+        item.appendChild(buttons);
+
         list.appendChild(item);
 
     };
 
 
-    // buttons.appendChild(remove);
-    // buttons.appendChild(complete);
-    // item.appendChild(buttons);
-    // list.appendChild(item);
+
+
+
