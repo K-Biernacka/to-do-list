@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta charset="UTF-8">
     <title>To Do List</title>
@@ -13,9 +14,10 @@
 
 
 <div class="to-do-list">
+    <div class="d-flex justify-content-center flex-column col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
     <div class="list-header">
-        <form class="form-inline">
-            <label class="sr-only" for="item">Task</label>
+        <form class="form-inline justify-content-between">
+
             <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="item" placeholder="What should I do?">
             <button type="button" class="btn btn-primary" id="add">Add task</button>
         </form>
@@ -24,23 +26,23 @@
 
     <div class="list-body">
 
-        <ul id="todo">
+        <div id="todo">
 
 
-        </ul>
+        </div>
 
         <hr />
 
-        <ul id="completed">
+        <div id="completed">
 
 
-        </ul>
+        </div>
 
 
 
     </div>
 
-
+    </div>
 </div>
 
 

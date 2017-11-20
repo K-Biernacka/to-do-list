@@ -15,7 +15,7 @@
     };
 
     let completeItem = function () {
-        let item = this.parentNode.parentNode;
+        let item = this.parentNode.parentNode.parentNode;
         let button = item.getElementsByClassName('complete');
 
         let id = item.parentNode.id;
@@ -33,8 +33,11 @@
 
         let list = document.getElementById('todo');
 
-        let item = document.createElement('li');
+
+
+        let item = document.createElement('div');
         item.innerText = text;
+        item.className = 'justify-content-between d-flex list-item';
 
 
         let buttons = document.createElement('div');
@@ -53,7 +56,14 @@
         complete.addEventListener('click', completeItem);
         item.appendChild(buttons);
 
-        list.appendChild(item);
+        let box = document.createElement('div');
+        box.className = 'box';
+
+
+        box.appendChild(item);
+        list.appendChild(box);
+
+
 
     };
 
