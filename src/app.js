@@ -16,16 +16,16 @@
 
     let completeItem = function () {
         let item = this.parentNode.parentNode;
-
+        let button = item.getElementsByClassName('complete');
 
         let id = item.parentNode.id;
+
+        button[0].className = (id === 'todo') ? 'fa fa-check-square complete' : 'fa fa-check complete';
 
         let target = (id === 'todo') ? document.getElementById('completed'): document.getElementById('todo');
 
         item.remove();
         target.appendChild(item);
-
-
 
     };
 
@@ -39,15 +39,15 @@
 
         let buttons = document.createElement('div');
 
-        let remove = document.createElement('button');
-        remove.innerText = 'remove';
+        let remove = document.createElement('i');
+        remove.className = 'fa fa-times';
         buttons.appendChild(remove);
 
         remove.addEventListener('click', removeItem);
 
 
-        let complete = document.createElement('button');
-        complete.innerText = 'complete';
+        let complete = document.createElement('i');
+        complete.className = 'fa fa-check complete';
         buttons.appendChild(complete);
 
         complete.addEventListener('click', completeItem);
