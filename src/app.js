@@ -2,7 +2,6 @@
  * Created by Kinga on 18.11.2017.
  */
 
-
     document.getElementById('add').addEventListener('click', function() {
         let input = document.getElementById('item');
         if (input.value) addItemToDo(input.value);
@@ -26,14 +25,11 @@
 
         item.remove();
         target.appendChild(item);
-
     };
 
     let addItemToDo = (text) => {
 
         let list = document.getElementById('todo');
-
-
 
         let item = document.createElement('div');
         item.innerText = text;
@@ -59,12 +55,8 @@
         let box = document.createElement('div');
         box.className = 'box';
 
-
         box.appendChild(item);
         list.appendChild(box);
-
-
-
     };
 
 
